@@ -180,6 +180,50 @@
         width: 140px; height: 160px; object-fit: cover;
         border-radius: 50%; border: 3px solid rgba(255,255,255,0.3);
       }
+
+      /* ===========================
+         TAMBAHAN ANIMASI INTERAKTIF (BARU)
+      =========================== */
+      
+      /* 1. Animasi Benda Melayang (Untuk Cover Buku) */
+      @keyframes floating {
+        0% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-15px) rotate(2deg); }
+        100% { transform: translateY(0px) rotate(0deg); }
+      }
+
+      .book-float {
+        width: 140px; /* Ukuran buku kecil */
+        border-radius: 12px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+        animation: floating 4s ease-in-out infinite; /* Bergerak selamanya */
+        margin-bottom: 20px;
+        border: 2px solid rgba(255,255,255,0.2);
+      }
+
+      /* 2. Animasi Muncul dari Bawah (Untuk Judul & Kartu) */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Kelas untuk elemen yang mau dianimasikan */
+      .fade-in-up {
+        animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        opacity: 0; /* Wajib hidden dulu biar ga kedip */
+      }
+
+      /* Delay biar munculnya gantian (estetik) */
+      .delay-1 { animation-delay: 0.2s; }
+      .delay-2 { animation-delay: 0.4s; }
+      .delay-3 { animation-delay: 0.6s; }
+
     </style>
   </head>
 
@@ -208,10 +252,15 @@
 
     <section id="resensi" class="page d-none resensi-hero">
       <div class="container text-center">
-        <h1 class="display-4 mb-2">Modul Resensi</h1>
-        <p class="mb-5 text-light opacity-75">Analisis Novel Si Anak Pemberani</p>
+        
+        <div class="fade-in-up">
+           <img src="assets/img/cover.jpg" alt="Cover Si Anak Pemberani" class="book-float">
+        </div>
 
-        <div class="row g-4 justify-content-center">
+        <h1 class="display-4 mb-2 fade-in-up delay-1">Modul Resensi</h1>
+        <p class="mb-5 text-light opacity-75 fade-in-up delay-1">Analisis Novel Si Anak Pemberani</p>
+
+        <div class="row g-4 justify-content-center fade-in-up delay-2">
           
           <div class="col-6 col-md-3">
             <div class="module-card-dark" data-bs-toggle="modal" data-bs-target="#identitasModal">
@@ -250,7 +299,7 @@
 
         </div>
 
-        <div class="mt-5">
+        <div class="mt-5 fade-in-up delay-3">
           <button class="btn-primary-custom mb-4" data-bs-toggle="modal" data-bs-target="#quoteModal">
             💬 Quote Motivasi
           </button>
