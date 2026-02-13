@@ -23,155 +23,105 @@
         --cream: #f3efe6;
       }
 
-/* =====================
-   RESENSI HERO FIXED
-===================== */
-
-.resensi-hero{
-  min-height:75vh;
-  padding:120px 0 80px 0;
-  background:
-    linear-gradient(rgba(24,58,46,.85),rgba(47,89,97,.85)),
-    url('assets/img/cover.jpg') center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-
-.resensi-content{
-  margin-top:60px;
-}
-
-/* COVER */
-
-.book-cover{
-  width:220px;
-  border-radius:16px;
-  box-shadow:0 30px 80px rgba(0,0,0,.6);
-  animation:floatBook 6s ease-in-out infinite;
-}
-
-@keyframes floatBook{
-  0%{transform:translateY(0);}
-  50%{transform:translateY(-15px);}
-  100%{transform:translateY(0);}
-}
-
-.book-title{
-  margin-top:25px;
-  font-weight:700;
-  letter-spacing:2px;
-  color:white;
-}
-
-.book-author{
-  color:#ddd;
-}
-
-/* SECTION LIGHT */
-
-.section-light{
-  background:var(--cream);
-  padding:80px 0 60px 0;
-  margin-top:-60px;
-  border-radius:50px 50px 0 0;
-  box-shadow:0 -20px 40px rgba(0,0,0,0.08);
-}
-
-.section-title{
-  font-weight:700;
-  font-size:2.2rem;
-}
-
-.section-sub{
-  opacity:.7;
-}
-
-
-.resensi-content{
-  transform:translateY(40px);
-}
-
-/* BOOK */
-
-.book-wrapper{
-  display:inline-block;
-  perspective:1000px;
-}
-
-.book-cover{
-  width:260px;
-  border-radius:18px;
-  box-shadow:0 40px 90px rgba(0,0,0,0.7);
-  animation:floatBook 6s ease-in-out infinite;
-  transition:.5s;
-}
-
-@keyframes floatBook{
-  0%{ transform:translateY(0px); }
-  50%{ transform:translateY(-18px); }
-  100%{ transform:translateY(0px); }
-}
-
-.book-cover:hover{
-  transform:scale(1.05) rotateY(8deg);
-}
-
-/* TITLE */
-
-.book-title{
-  font-weight:700;
-  letter-spacing:3px;
-  font-size:2.3rem;
-  margin-top:30px;
-}
-
-.book-author{
-  font-size:1.1rem;
-  opacity:.85;
-}
-
-      .resensi-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          135deg,
-          rgba(44, 90, 70, 0.6),
-          rgba(47, 89, 97, 0.6),
-          rgba(24, 58, 46, 0.6)
-        );
-        background-size: 200% 200%;
-        animation: gradientMove 12s ease infinite;
-        z-index: 0;
+      /* =====================
+         FIX TAMPILAN HP (OVERFLOW)
+      ===================== */
+      html, body {
+        max-width: 100%;
+        overflow-x: hidden;
       }
 
-      .resensi-card {
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(20px);
-        border-radius: 20px;
-        padding: 40px 20px;
-        color: #f3efe6;
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--cream);
+      }
+
+      /* =====================
+         RESENSI HERO FIXED
+      ===================== */
+
+      .resensi-hero {
+        min-height: 75vh;
+        /* Padding disesuaikan agar rapi di HP */
+        padding: 100px 0 80px 0; 
+        background:
+          linear-gradient(rgba(24,58,46,.85),rgba(47,89,97,.85)),
+          url('assets/img/cover.jpg') center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .resensi-content {
+        margin-top: 60px;
+        transform: translateY(40px);
+      }
+
+      /* COVER */
+      .book-wrapper {
+        display: inline-block;
+        perspective: 1000px;
+      }
+
+      .book-cover {
+        width: 220px;
+        border-radius: 16px;
+        box-shadow: 0 30px 80px rgba(0,0,0,.6);
+        animation: floatBook 6s ease-in-out infinite;
+        transition: .5s;
+      }
+
+      @keyframes floatBook {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0); }
+      }
+
+      .book-cover:hover {
+        transform: scale(1.05) rotateY(8deg);
+      }
+
+      /* TITLE */
+      .book-title {
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: 2.3rem;
+        margin-top: 30px;
+        color: var(--forest);
+      }
+
+      .book-author {
+        font-size: 1.1rem;
+        opacity: .85;
+        color: #ddd;
+      }
+
+      /* CARD STYLES */
+      .module-card-dark {
+        background: rgba(255,255,255,0.08);
+        backdrop-filter: blur(10px);
+        border-radius: 25px;
+        padding: 40px;
+        text-align: center;
+        color: white;
         cursor: pointer;
-        transition: 0.4s ease;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        transition: .3s ease;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        height: 100%; /* Agar tinggi kartu sama rata */
       }
 
-      .resensi-card h5 {
-        margin-top: 10px;
-        font-weight: 600;
+      .module-card-dark:hover {
+        transform: translateY(-10px);
+        background: rgba(255,255,255,0.15);
+        box-shadow: 0 25px 60px rgba(0,0,0,0.35);
       }
 
-      .resensi-card:hover {
-        transform: translateY(-10px) scale(1.05);
-        background: rgba(255, 255, 255, 0.15);
-        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+      .icon-lg {
+        font-size: 35px;
+        margin-bottom: 15px;
       }
 
-      /* =========================
-   INNER BEAUTY HERO STYLE
-========================= */
-
+      /* INNER BEAUTY STYLES */
       .hero-inner {
         min-height: 100vh;
         position: relative;
@@ -185,7 +135,6 @@
         overflow: hidden;
       }
 
-      /* Moving gradient overlay */
       .inner-overlay {
         position: absolute;
         inset: 0;
@@ -200,7 +149,12 @@
         z-index: 0;
       }
 
-      /* Glass Card */
+      @keyframes gradientMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
       .inner-card {
         background: rgba(255, 255, 255, 0.08);
         backdrop-filter: blur(20px);
@@ -210,6 +164,7 @@
         cursor: pointer;
         transition: 0.4s ease;
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        height: 100%;
       }
 
       .inner-card h5 {
@@ -223,17 +178,11 @@
         box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
       }
 
-      body {
-        font-family: "Poppins", sans-serif;
-        background: var(--cream);
-      }
-
-      /* NAVBAR */
+      /* GENERAL STYLES */
       .navbar {
         background: linear-gradient(90deg, var(--forest), var(--forest2));
       }
 
-      /* HERO */
       .hero {
         min-height: 100vh;
         background:
@@ -243,13 +192,6 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        color: white;
-      }
-
-      /* SECTION */
-      .section-dark {
-        padding: 100px 0;
-        background: linear-gradient(135deg, var(--forest), var(--river));
         color: white;
       }
 
@@ -268,70 +210,6 @@
         box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
       }
 
-      /* CARD */
-      .module-card{
-  background:white;
-  border-radius:20px;
-  transition:.3s ease;
-  cursor:pointer;
-}
-
-.module-card-dark{
-  background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(10px);
-  border-radius:25px;
-  padding:40px;
-  text-align:center;
-  color:white;
-  cursor:pointer;
-  transition:.3s ease;
-  box-shadow:0 20px 40px rgba(0,0,0,0.25);
-}
-
-.module-card-dark:hover{
-  transform:translateY(-10px);
-  background:rgba(255,255,255,0.15);
-  box-shadow:0 25px 60px rgba(0,0,0,0.35);
-}
-
-.icon-lg{
-  font-size:35px;
-  margin-bottom:15px;
-}
-
-
-.module-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 40px rgba(0,0,0,0.12);
-}
-
-      /* BOOK COVER ANIMATION */
-
-      .book-wrapper {
-        display: inline-block;
-        perspective: 1000px;
-      }
-
-      .book-cover {
-        width: 100px;
-        border-radius: 18px;
-        box-shadow: 0 35px 80px rgba(0, 0, 0, 0.6);
-      }
-
-      /* Hover effect */
-      .book-cover:hover {
-        transform: rotateY(8deg) scale(1);
-        box-shadow: 0 50px 100px rgba(0, 0, 0, 0.8);
-      }
-
-      /* BOOK TITLE */
-      .book-title {
-        font-weight: 700;
-        letter-spacing: 2px;
-        color: var(--forest);
-      }
-
-      /* BUTTON */
       .btn-primary-custom {
         background: var(--sand);
         color: var(--forest);
@@ -347,7 +225,7 @@
         padding: 30px 0;
       }
 
-      /* MODAL GLASS */
+      /* MODAL STYLES */
       .modal-content {
         background: linear-gradient(
           135deg,
@@ -372,104 +250,100 @@
 
   <body>
     <nav class="navbar navbar-dark px-4">
-      <span class="navbar-brand"
-        >Proyek Literasi Digital - A.Rachman Fahri</span
-      >
+      <span class="navbar-brand">Proyek Literasi Digital - A.Rachman Fahri</span>
     </nav>
 
-    <!-- HOME -->
     <section id="homePage" class="hero">
       <div class="text-center">
         <h1>Proyek Literasi Digital</h1>
         <p>Pilih materi yang ingin Anda eksplorasi</p>
 
         <div class="mt-4">
-          <button class="btn btn-light me-3" onclick="showResensi()">
+          <button class="btn btn-light me-3 mb-3" onclick="showResensi()">
             📘 Resensi Novel
           </button>
 
-          <button class="btn btn-outline-light" onclick="showInnerBeauty()">
+          <button class="btn btn-outline-light mb-3" onclick="showInnerBeauty()">
             ✨ Inner Beauty
           </button>
         </div>
       </div>
     </section>
 
-    <!-- RESENSI -->
-<section id="resensi" class="page d-none hero">
+    <section id="resensi" class="page d-none hero">
+      <div class="text-center w-100">
+        <h1 class="display-4 fw-bold">Modul Resensi</h1>
+        <p class="mb-5" style="opacity:.85;">
+          Analisis Novel Si Anak Pemberani
+        </p>
 
-  <div class="text-center w-100">
+        <div class="container">
+          <div class="row g-4 justify-content-center">
+            
+            <div class="col-6 col-md-4 col-lg-2">
+               <div class="module-card-dark"
+                    data-bs-toggle="modal"
+                    data-bs-target="#identitasModal">
+                 <div class="icon-lg">📋</div>
+                 <h5>Identitas Buku</h5>
+               </div>
+            </div>
 
-    <h1 class="display-4 fw-bold">Modul Resensi</h1>
-    <p class="mb-5" style="opacity:.85;">
-      Analisis Novel Si Anak Pemberani
-    </p>
+            <div class="col-6 col-md-4 col-lg-2">
+              <div class="module-card-dark"
+                   data-bs-toggle="modal"
+                   data-bs-target="#profilModal">
+                <div class="icon-lg">👤</div>
+                <h5>Profil Penulis</h5>
+              </div>
+            </div>
 
-    <div class="container">
-      <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-4 col-lg-2">
+              <div class="module-card-dark"
+                   data-bs-toggle="modal"
+                   data-bs-target="#sinopsisModal">
+                <div class="icon-lg">🌿</div>
+                <h5>Sinopsis</h5>
+              </div>
+            </div>
 
-        <div class="col-md-3">
-          <div class="module-card-dark"
-               data-bs-toggle="modal"
-               data-bs-target="#profilModal">
-            <div class="icon-lg">📘</div>
-            <h5>Profil Penulis</h5>
+            <div class="col-6 col-md-4 col-lg-2">
+              <div class="module-card-dark"
+                   data-bs-toggle="modal"
+                   data-bs-target="#kelebihanModal">
+                <div class="icon-lg">⭐</div>
+                <h5>Kelebihan</h5>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+              <div class="module-card-dark"
+                   data-bs-toggle="modal"
+                   data-bs-target="#kekuranganModal">
+                <div class="icon-lg">⚖️</div>
+                <h5>Kekurangan</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <button class="btn-primary-custom"
+                    data-bs-toggle="modal"
+                    data-bs-target="#quoteModal">
+              💬 Quote Motivasi
+            </button>
+          </div>
+
+          <div class="mt-4">
+            <button class="btn btn-light px-4 py-2 rounded-pill"
+                    onclick="goHome()">
+              ← Kembali ke Home
+            </button>
           </div>
         </div>
-
-        <div class="col-md-3">
-          <div class="module-card-dark"
-               data-bs-toggle="modal"
-               data-bs-target="#sinopsisModal">
-            <div class="icon-lg">🌿</div>
-            <h5>Sinopsis</h5>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="module-card-dark"
-               data-bs-toggle="modal"
-               data-bs-target="#kelebihanModal">
-            <div class="icon-lg">⭐</div>
-            <h5>Kelebihan</h5>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="module-card-dark"
-               data-bs-toggle="modal"
-               data-bs-target="#kekuranganModal">
-            <div class="icon-lg">⚖️</div>
-            <h5>Kekurangan</h5>
-          </div>
-        </div>
-
       </div>
+    </section>
 
-      <div class="mt-5">
-        <button class="btn-primary-custom"
-                data-bs-toggle="modal"
-                data-bs-target="#quoteModal">
-          💬 Quote Motivasi
-        </button>
-      </div>
-
-      <div class="mt-4">
-        <button class="btn btn-light px-4 py-2 rounded-pill"
-                onclick="goHome()">
-          ← Kembali ke Home
-        </button>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-    <!-- INNER BEAUTY -->
     <section id="inner" class="page d-none hero-inner">
       <div class="inner-overlay"></div>
 
@@ -480,56 +354,45 @@
         </p>
 
         <div class="row g-4 justify-content-center">
-          <div class="col-md-3">
-            <div
-              class="inner-card"
+          <div class="col-6 col-md-3">
+            <div class="inner-card"
               data-bs-toggle="modal"
-              data-bs-target="#taniaModal"
-            >
-              🌿
+              data-bs-target="#taniaModal">
+              <div class="icon-lg">🌿</div>
               <h5>Tania</h5>
             </div>
           </div>
 
-          <div class="col-md-3">
-            <div
-              class="inner-card"
+          <div class="col-6 col-md-3">
+            <div class="inner-card"
               data-bs-toggle="modal"
-              data-bs-target="#zeeModal"
-            >
-              🌊
+              data-bs-target="#zeeModal">
+              <div class="icon-lg">🌊</div>
               <h5>Zeevara</h5>
             </div>
           </div>
 
-          <div class="col-md-3">
-            <div
-              class="inner-card"
+          <div class="col-6 col-md-3">
+            <div class="inner-card"
               data-bs-toggle="modal"
-              data-bs-target="#compareModal"
-            >
-              ⚖️
+              data-bs-target="#compareModal">
+              <div class="icon-lg">⚖️</div>
               <h5>Perbandingan</h5>
             </div>
           </div>
 
-          <div class="col-md-3">
-            <div
-              class="inner-card"
+          <div class="col-6 col-md-3">
+            <div class="inner-card"
               data-bs-toggle="modal"
-              data-bs-target="#valueModal"
-            >
-              📌
+              data-bs-target="#valueModal">
+              <div class="icon-lg">📌</div>
               <h5>Nilai Moral</h5>
             </div>
           </div>
         </div>
 
         <div class="mt-5">
-          <button
-            class="btn btn-light px-4 py-2 rounded-pill"
-            onclick="goHome()"
-          >
+          <button class="btn btn-light px-4 py-2 rounded-pill" onclick="goHome()">
             ← Kembali ke Home
           </button>
         </div>
@@ -540,724 +403,277 @@
       © 2026 | Proyek Literasi Digital - A.Rachman Fahri
     </footer>
 
-    <!-- ================= MODALS ================= -->
+    <div class="modal fade" id="identitasModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">📋 Identitas Buku</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body text-start">
+            <ul class="list-unstyled">
+              <li class="mb-2"><strong>Penulis:</strong> Tere Liye</li>
+              <li class="mb-2"><strong>Penerbit:</strong> PT Sabak Grip Nusantara</li>
+              <li class="mb-2"><strong>Tahun Terbit:</strong> Pertama kali Maret 2021 (dan dicetak ulang tahun-tahun berikutnya)</li>
+              <li class="mb-2"><strong>Jumlah Halaman:</strong> Sekitar 435 halaman</li>
+              <li class="mb-2"><strong>ISBN:</strong> 9786239607401</li>
+              <li class="mb-2"><strong>Kategori:</strong> Fiksi, Serial Anak Nusantara</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="modal fade" id="sinopsisModal">
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">🌿 Sinopsis</h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-            ></button>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
           </div>
-          <div class="modal-body"><p>
-          <strong>Si Anak Pemberani</strong> merupakan salah satu seri dari kisah 
-          keluarga sederhana yang hidup di sebuah kampung terpencil di Sumatera. 
-          Novel ini berfokus pada tokoh Eliana, anak perempuan berusia dua belas tahun 
-          yang memiliki keberanian, kecerdasan, dan rasa keadilan yang kuat.
-        </p>
-
-        <p>
-          Konflik bermula ketika aktivitas penambangan pasir ilegal mulai merusak 
-          lingkungan kampung mereka. Sungai yang dahulu jernih berubah keruh, 
-          lahan pertanian terancam, dan ketenangan warga terganggu. 
-          Namun ironisnya, sebagian orang dewasa memilih diam karena takut 
-          atau merasa tidak berdaya menghadapi pihak yang lebih berkuasa.
-        </p>
-
-        <p>
-          Di tengah situasi tersebut, Eliana bersama tiga sahabatnya 
-          yaitu Hima, Damdas, dan Marhotap. Mereka membentuk kelompok kecil bernama 
-          <em>“Empat Buntal”</em>. Mereka berupaya mencari cara untuk melawan 
-          ketidakadilan dengan keberanian khas anak-anak yang belum terkontaminasi 
-          oleh rasa takut sosial.
-        </p>
-
-        <p>
-          Perjuangan mereka tidak selalu berjalan mulus. Ketegangan meningkat 
-          ketika tindakan nekat dilakukan, yang berujung pada peristiwa tragis 
-          dan misterius. Peristiwa tersebut menjadi titik balik emosional, 
-          sekaligus ujian kedewasaan bagi Eliana.
-        </p>
-
-        <p>
-          Klimaks cerita hadir melalui peristiwa alam yang simbolis: 
-          hujan deras dan banjir bandang yang menghancurkan lokasi penambangan ilegal. 
-          Momen ini bukan sekadar penyelesaian konflik, tetapi metafora kuat bahwa 
-          alam memiliki mekanisme keseimbangan sendiri.
-        </p>
-
-        <p>
-          Melalui alur yang sederhana namun sarat makna, Tere Liye 
-          menyampaikan pesan tentang keberanian moral, tanggung jawab sosial, 
-          solidaritas persahabatan, serta urgensi menjaga lingkungan. 
-          Novel ini tidak hanya menghadirkan petualangan remaja, 
-          tetapi juga refleksi etis tentang sikap manusia terhadap kekuasaan 
-          dan alam.
-        </p>
-      </div>
+          <div class="modal-body text-start">
+            <p><strong>Si Anak Pemberani</strong> merupakan salah satu seri dari kisah keluarga sederhana yang hidup di sebuah kampung terpencil di Sumatera. Novel ini berfokus pada tokoh Eliana, anak perempuan berusia dua belas tahun yang memiliki keberanian, kecerdasan, dan rasa keadilan yang kuat.</p>
+            <p>Konflik bermula ketika aktivitas penambangan pasir ilegal mulai merusak lingkungan kampung mereka. Sungai yang dahulu jernih berubah keruh, lahan pertanian terancam, dan ketenangan warga terganggu. Namun ironisnya, sebagian orang dewasa memilih diam karena takut atau merasa tidak berdaya menghadapi pihak yang lebih berkuasa.</p>
+            <p>Di tengah situasi tersebut, Eliana bersama tiga sahabatnya yaitu Hima, Damdas, dan Marhotap. Mereka membentuk kelompok kecil bernama <em>“Empat Buntal”</em>. Mereka berupaya mencari cara untuk melawan ketidakadilan dengan keberanian khas anak-anak yang belum terkontaminasi oleh rasa takut sosial.</p>
+            <p>Perjuangan mereka tidak selalu berjalan mulus. Ketegangan meningkat ketika tindakan nekat dilakukan, yang berujung pada peristiwa tragis dan misterius. Peristiwa tersebut menjadi titik balik emosional, sekaligus ujian kedewasaan bagi Eliana.</p>
+            <p>Klimaks cerita hadir melalui peristiwa alam yang simbolis: hujan deras dan banjir bandang yang menghancurkan lokasi penambangan ilegal. Momen ini bukan sekadar penyelesaian konflik, tetapi metafora kuat bahwa alam memiliki mekanisme keseimbangan sendiri.</p>
+            <p>Melalui alur yang sederhana namun sarat makna, Tere Liye menyampaikan pesan tentang keberanian moral, tanggung jawab sosial, solidaritas persahabatan, serta urgensi menjaga lingkungan. Novel ini tidak hanya menghadirkan petualangan remaja, tetapi juga refleksi etis tentang sikap manusia terhadap kekuasaan dan alam.</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- KELEBIHAN -->
     <div class="modal fade" id="kelebihanModal">
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">⭐ Kelebihan</h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-            ></button>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
           </div>
-          <div class="modal-body"><h6><strong>1️⃣ Isu Lingkungan yang Relevan dan Aktual</strong></h6>
-        <p>
-          Novel ini mengangkat persoalan penambangan ilegal dan kerusakan lingkungan 
-          sebagai konflik utama. Tema tersebut tidak bersifat dekoratif, melainkan 
-          menjadi fondasi struktural cerita. Relevansinya tinggi terhadap realitas 
-          sosial Indonesia, sehingga pembaca tidak hanya menikmati cerita, tetapi 
-          juga diajak merefleksikan problem ekologis secara konkret.
-        </p>
-
-        <hr>
-
-        <h6><strong>2️⃣ Karakter Protagonis yang Kuat dan Konsisten</strong></h6>
-        <p>
-          Eliana ditampilkan sebagai tokoh dengan keberanian moral yang stabil. 
-          Ia tidak digambarkan sebagai sosok sempurna, melainkan sebagai anak yang 
-          berpikir kritis dan berani mengambil sikap ketika melihat ketidakadilan. 
-          Konsistensi karakter ini membuat konflik terasa logis dan tidak dipaksakan.
-        </p>
-
-        <hr>
-
-        <h6><strong>3️⃣ Kritik Sosial Disampaikan Secara Implisit</strong></h6>
-        <p>
-          Tere Liye tidak menggunakan pendekatan ceramah langsung. Kritik terhadap 
-          ketidakberdayaan aparat, ketimpangan kekuasaan, dan sikap apatis masyarakat 
-          disampaikan melalui dialog dan dinamika peristiwa. Strategi ini membuat 
-          pesan moral lebih elegan dan tidak menggurui.
-        </p>
-
-        <hr>
-
-        <h6><strong>4️⃣ Struktur Alur yang Progresif</strong></h6>
-        <p>
-          Alur bergerak dari pengenalan masalah, eskalasi konflik, hingga klimaks 
-          yang simbolis. Peristiwa banjir bandang sebagai penyelesaian konflik 
-          berfungsi ganda: sebagai resolusi naratif dan simbol keseimbangan alam. 
-          Struktur ini memperkuat kesan dramatik sekaligus tematik.
-        </p>
-
-        <hr>
-
-        <h6><strong>5️⃣ Bahasa Sederhana namun Bermuatan Nilai</strong></h6>
-        <p>
-          Gaya bahasa yang digunakan relatif ringan dan komunikatif, 
-          tetapi tetap menyimpan kedalaman makna. Hal ini menjadikan novel 
-          dapat diakses oleh pembaca remaja tanpa kehilangan kualitas reflektifnya.
-        </p>
-      </div>
+          <div class="modal-body text-start">
+            <h6><strong>1️⃣ Isu Lingkungan yang Relevan dan Aktual</strong></h6>
+            <p>Novel ini mengangkat persoalan penambangan ilegal dan kerusakan lingkungan sebagai konflik utama. Tema tersebut tidak bersifat dekoratif, melainkan menjadi fondasi struktural cerita. Relevansinya tinggi terhadap realitas sosial Indonesia, sehingga pembaca tidak hanya menikmati cerita, tetapi juga diajak merefleksikan problem ekologis secara konkret.</p>
+            <hr>
+            <h6><strong>2️⃣ Karakter Protagonis yang Kuat dan Konsisten</strong></h6>
+            <p>Eliana ditampilkan sebagai tokoh dengan keberanian moral yang stabil. Ia tidak digambarkan sebagai sosok sempurna, melainkan sebagai anak yang berpikir kritis dan berani mengambil sikap ketika melihat ketidakadilan. Konsistensi karakter ini membuat konflik terasa logis dan tidak dipaksakan.</p>
+            <hr>
+            <h6><strong>3️⃣ Kritik Sosial Disampaikan Secara Implisit</strong></h6>
+            <p>Tere Liye tidak menggunakan pendekatan ceramah langsung. Kritik terhadap ketidakberdayaan aparat, ketimpangan kekuasaan, dan sikap apatis masyarakat disampaikan melalui dialog dan dinamika peristiwa. Strategi ini membuat pesan moral lebih elegan dan tidak menggurui.</p>
+            <hr>
+            <h6><strong>4️⃣ Struktur Alur yang Progresif</strong></h6>
+            <p>Alur bergerak dari pengenalan masalah, eskalasi konflik, hingga klimaks yang simbolis. Peristiwa banjir bandang sebagai penyelesaian konflik berfungsi ganda: sebagai resolusi naratif dan simbol keseimbangan alam. Struktur ini memperkuat kesan dramatik sekaligus tematik.</p>
+            <hr>
+            <h6><strong>5️⃣ Bahasa Sederhana namun Bermuatan Nilai</strong></h6>
+            <p>Gaya bahasa yang digunakan relatif ringan dan komunikatif, tetapi tetap menyimpan kedalaman makna. Hal ini menjadikan novel dapat diakses oleh pembaca remaja tanpa kehilangan kualitas reflektifnya.</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- KEKURANGAN -->
     <div class="modal fade" id="kekuranganModal">
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">⚖️ Kekurangan</h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-            ></button>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
           </div>
-          <div class="modal-body"><ul> <li> <strong>Beberapa bagian tengah cerita terasa melambat.</strong><br> Setelah konflik utama diperkenalkan, terdapat bagian narasi yang lebih banyak berisi dialog dan pengembangan situasi tanpa peningkatan ketegangan yang signifikan, sehingga ritme cerita terasa sedikit monoton bagi pembaca yang menyukai alur cepat. </li> <br> <li> <strong>Pengungkapan konflik utama terkesan ditahan hingga akhir.</strong><br> Salah satu kasus penting dalam cerita sengaja tidak langsung diselesaikan dan baru dipuncakkan pada bab terakhir. Strategi ini memang membangun rasa penasaran, tetapi bagi sebagian pembaca bisa terasa seperti penundaan konflik yang terlalu lama. </li> <br> <li> <strong>Kedalaman karakter pendukung belum sepenuhnya eksploratif.</strong><br> Beberapa tokoh seperti Hima dan Damdas memiliki peran penting, namun tidak semua latar belakang emosional mereka digali secara mendalam. Hal ini membuat fokus cerita lebih terpusat pada Eliana. </li> <br> <li> <strong>Segmentasi pembaca cukup spesifik.</strong><br> Dengan ketebalan dan struktur cerita yang cukup detail, novel ini mungkin kurang cocok bagi pembaca yang lebih menyukai bacaan ringan dan singkat. </li> <br> <li> <strong>Desain sampul relatif sederhana.</strong><br> Dari sisi visual, cover buku tidak terlalu mencolok dibanding novel remaja lain yang lebih ekspresif. Hal ini dapat memengaruhi daya tarik awal sebelum pembaca mengenal isi ceritanya. </li> </ul>
+          <div class="modal-body text-start">
+            <ul>
+              <li><strong>Beberapa bagian tengah cerita terasa melambat.</strong><br>Setelah konflik utama diperkenalkan, terdapat bagian narasi yang lebih banyak berisi dialog dan pengembangan situasi tanpa peningkatan ketegangan yang signifikan, sehingga ritme cerita terasa sedikit monoton bagi pembaca yang menyukai alur cepat.</li>
+              <br>
+              <li><strong>Pengungkapan konflik utama terkesan ditahan hingga akhir.</strong><br>Salah satu kasus penting dalam cerita sengaja tidak langsung diselesaikan dan baru dipuncakkan pada bab terakhir. Strategi ini memang membangun rasa penasaran, tetapi bagi sebagian pembaca bisa terasa seperti penundaan konflik yang terlalu lama.</li>
+              <br>
+              <li><strong>Kedalaman karakter pendukung belum sepenuhnya eksploratif.</strong><br>Beberapa tokoh seperti Hima dan Damdas memiliki peran penting, namun tidak semua latar belakang emosional mereka digali secara mendalam. Hal ini membuat fokus cerita lebih terpusat pada Eliana.</li>
+              <br>
+              <li><strong>Segmentasi pembaca cukup spesifik.</strong><br>Dengan ketebalan dan struktur cerita yang cukup detail, novel ini mungkin kurang cocok bagi pembaca yang lebih menyukai bacaan ringan dan singkat.</li>
+              <br>
+              <li><strong>Desain sampul relatif sederhana.</strong><br>Dari sisi visual, cover buku tidak terlalu mencolok dibanding novel remaja lain yang lebih ekspresif. Hal ini dapat memengaruhi daya tarik awal sebelum pembaca mengenal isi ceritanya.</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- QUOTE -->
     <div class="modal fade" id="quoteModal">
       <div class="modal-dialog modal-md modal-dialog-centered">
         <div class="modal-content text-center">
           <div class="modal-header">
             <h5 class="modal-title">💬 Quote Motivasi</h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-            ></button>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
           </div>
-          <div class="modal-body"><p><em>"🙌 Semesta memiliki caranya sendiri untuk menjaga keseimbangan."</em></p>
+          <div class="modal-body">
+            <p><em>"🙌 Semesta memiliki caranya sendiri untuk menjaga keseimbangan."</em></p>
+            <blockquote style="font-style:italic; font-weight:500;">🌿 “Keberanian bukan tentang usia, melainkan tentang sikap dalam menghadapi ketidakadilan.”</blockquote>
+            <hr style="border-color: rgba(255,255,255,0.2);">
+            <blockquote style="font-style:italic; font-weight:500;">🌊 “Alam memiliki caranya sendiri menjaga keseimbangan. Manusia hanya perlu belajar menghormatinya.”</blockquote>
+            <hr style="border-color: rgba(255,255,255,0.2);">
+            <blockquote style="font-style:italic; font-weight:500;">✨ “Luka masa lalu tidak harus menjadi akhir, ia bisa menjadi awal transformasi.”</blockquote>
           </div>
-          <blockquote style="font-style:italic; font-weight:500;">
-        🌿 “Keberanian bukan tentang usia,
-        melainkan tentang sikap dalam menghadapi ketidakadilan.”
-      </blockquote>
-
-      <hr style="border-color: rgba(255,255,255,0.2);">
-
-      <blockquote style="font-style:italic; font-weight:500;">
-        🌊 “Alam memiliki caranya sendiri menjaga keseimbangan.
-        Manusia hanya perlu belajar menghormatinya.”
-      </blockquote>
-
-      <hr style="border-color: rgba(255,255,255,0.2);">
-
-      <blockquote style="font-style:italic; font-weight:500;">
-        ✨ “Luka masa lalu tidak harus menjadi akhir,
-        ia bisa menjadi awal transformasi.”
-      </blockquote>
         </div>
       </div>
     </div>
 
-    <!-- TANIA -->
     <div class="modal fade" id="taniaModal">
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">🌿 Karakter Tania</h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-            ></button>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
           </div>
-          <div class="modal-body"><h5>🧠 1. Individu yang Reflektif</h5>
-<p>
-Tania tidak merespons perundungan dengan kemarahan atau penolakan realitas.
-Ia memilih pendekatan reflektif dan analitis terhadap dirinya sendiri.
-</p>
-
-<blockquote>
-“Aku bagaikan seorang peneliti, Zee. Kuanalisis seluruh tubuhku...”
-</blockquote>
-
-<p>
-Pernyataan ini menunjukkan bahwa Tania memiliki pola pikir evaluatif.
-Ia mengamati, meneliti, dan menarik kesimpulan secara rasional,
-bukan emosional.
-</p>
-
-<hr style="border-color: rgba(255,255,255,0.2);">
-
-<h5>🔍 2. Berorientasi pada Peningkatan Diri</h5>
-<p>
-Ketika tidak menemukan solusi instan terhadap kondisi fisiknya,
-Tania mengalihkan fokus pada prestasi akademik.
-Ia membangun identitas melalui pencapaian,
-bukan melalui penerimaan sosial semata.
-</p>
-
-<p>
-Ini menunjukkan kemampuan adaptif dan kontrol diri yang kuat.
-</p>
-
-<hr style="border-color: rgba(255,255,255,0.2);">
-
-<h5>🎭 3. Kompleks secara Emosional</h5>
-<p>
-Meskipun tampak sukses dan berubah secara fisik,
-Tania tetap menyimpan kesadaran akan ironi hidup.
-</p>
-
-<blockquote>
-“Kita kehilangan setelah mendapatkan semua yang kita inginkan.”
-</blockquote>
-
-<p>
-Ucapan ini menandakan bahwa ia tidak naif.
-Ia menyadari bahwa pencapaian eksternal tidak selalu
-sejalan dengan stabilitas batin.
-</p>
-
-<hr style="border-color: rgba(255,255,255,0.2);">
-
-<h5>✨ 4. Transformasi Internal</h5>
-<p>
-Perubahan Tania bukan hanya perubahan penampilan.
-Yang lebih signifikan adalah perubahan cara berpikir,
-cara memaknai luka, dan cara membangun harga diri.
-</p>
-
-<p>
-Inner beauty Tania terpancar dari kedewasaan emosional
-dan kemampuannya mengelola pengalaman traumatis masa lalu.
-</p>
-
-<hr style="border-color: rgba(255,255,255,0.2);">
-
-<h5>📌 Ringkasan Karakter</h5>
-<ul>
-  <li>🔎 Analitis dan reflektif</li>
-  <li>🎯 Adaptif dan berorientasi prestasi</li>
-  <li>🧠 Rasional dalam menghadapi tekanan sosial</li>
-  <li>🎭 Memiliki kesadaran eksistensial</li>
-</ul>
-</div>
+          <div class="modal-body text-start">
+            <h5>🧠 1. Individu yang Reflektif</h5>
+            <p>Tania tidak merespons perundungan dengan kemarahan atau penolakan realitas. Ia memilih pendekatan reflektif dan analitis terhadap dirinya sendiri.</p>
+            <blockquote>“Aku bagaikan seorang peneliti, Zee. Kuanalisis seluruh tubuhku...”</blockquote>
+            <p>Pernyataan ini menunjukkan bahwa Tania memiliki pola pikir evaluatif. Ia mengamati, meneliti, dan menarik kesimpulan secara rasional, bukan emosional.</p>
+            <hr style="border-color: rgba(255,255,255,0.2);">
+            <h5>🔍 2. Berorientasi pada Peningkatan Diri</h5>
+            <p>Ketika tidak menemukan solusi instan terhadap kondisi fisiknya, Tania mengalihkan fokus pada prestasi akademik. Ia membangun identitas melalui pencapaian, bukan melalui penerimaan sosial semata.</p>
+            <p>Ini menunjukkan kemampuan adaptif dan kontrol diri yang kuat.</p>
+            <hr style="border-color: rgba(255,255,255,0.2);">
+            <h5>🎭 3. Kompleks secara Emosional</h5>
+            <p>Meskipun tampak sukses dan berubah secara fisik, Tania tetap menyimpan kesadaran akan ironi hidup.</p>
+            <blockquote>“Kita kehilangan setelah mendapatkan semua yang kita inginkan.”</blockquote>
+            <p>Ucapan ini menandakan bahwa ia tidak naif. Ia menyadari bahwa pencapaian eksternal tidak selalu sejalan dengan stabilitas batin.</p>
+            <hr style="border-color: rgba(255,255,255,0.2);">
+            <h5>✨ 4. Transformasi Internal</h5>
+            <p>Perubahan Tania bukan hanya perubahan penampilan. Yang lebih signifikan adalah perubahan cara berpikir, cara memaknai luka, dan cara membangun harga diri.</p>
+            <p>Inner beauty Tania terpancar dari kedewasaan emosional dan kemampuannya mengelola pengalaman traumatis masa lalu.</p>
+            <hr style="border-color: rgba(255,255,255,0.2);">
+            <h5>📌 Ringkasan Karakter</h5>
+            <ul>
+              <li>🔎 Analitis dan reflektif</li>
+              <li>🎯 Adaptif dan berorientasi prestasi</li>
+              <li>🧠 Rasional dalam menghadapi tekanan sosial</li>
+              <li>🎭 Memiliki kesadaran eksistensial</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- ZEE -->
     <div class="modal fade" id="zeeModal">
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">🌊 Karakter Zeevara</h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-            ></button>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
           </div>
-          <div class="modal-body"><h5>🤝 1. Empatik dan Setia</h5>
-<p>
-Zee merupakan satu-satunya teman yang tetap bersama Tania
-di masa ketika ia dikucilkan oleh lingkungan sosialnya.
-Ia tidak ikut arus mayoritas yang mengejek,
-melainkan menunjukkan empati dan loyalitas.
-</p>
-
-<p>
-Kesetiaan ini mencerminkan kedewasaan sosial.
-Zee tidak menilai seseorang berdasarkan kondisi fisik,
-melainkan berdasarkan relasi dan nilai kemanusiaan.
-</p>
-
-<hr style="border-color: rgba(255,255,255,0.2);">
-
-<h5>🧠 2. Reflektif dan Realistis</h5>
-<p>
-Zee tidak terpesona oleh perubahan fisik dan keberhasilan Tania.
-Ia mampu melihat realitas secara objektif.
-</p>
-
-<blockquote>
-“Tetapi saat sekarang pun keadaan kita menyedihkan…”
-</blockquote>
-
-<p>
-Pernyataan ini menunjukkan bahwa Zee memiliki
-kemampuan berpikir kritis dan tidak mudah terbuai oleh pencapaian eksternal.
-Ia menyadari adanya persoalan mental yang lebih dalam.
-</p>
-
-<hr style="border-color: rgba(255,255,255,0.2);">
-
-<h5>🕊️ 3. Religius dan Berprinsip</h5>
-<p>
-Ketika azan berkumandang, Zee meminta izin untuk beribadah,
-meskipun sedang berada dalam pertemuan yang menyenangkan.
-</p>
-
-<p>
-Hal ini menunjukkan konsistensi nilai dan kedisiplinan spiritual.
-Ia tidak mengorbankan prinsip demi situasi sosial.
-</p>
-
-<hr style="border-color: rgba(255,255,255,0.2);">
-
-<h5>🎭 4. Peka terhadap Ironi Kehidupan</h5>
-<p>
-Zee memahami bahwa keberhasilan tidak selalu identik
-dengan kebahagiaan. Ia menangkap ironi dalam kehidupan mereka
-yang berakhir di ruang konsultasi psikologi.
-</p>
-
-<p>
-Kesadaran ini menandakan kematangan berpikir dan
-kemampuan melihat kehidupan secara lebih luas.
-</p>
-
-<hr style="border-color: rgba(255,255,255,0.2);">
-
-<h5>📌 Ringkasan Karakter</h5>
-<ul>
-  <li>🤝 Empatik dan loyal</li>
-  <li>🧠 Reflektif dan kritis</li>
-  <li>🕊️ Konsisten menjaga nilai spiritual</li>
-  <li>🎭 Mampu membaca kompleksitas hidup</li>
-</ul>
-</div>
+          <div class="modal-body text-start">
+            <h5>🤝 1. Empatik dan Setia</h5>
+            <p>Zee merupakan satu-satunya teman yang tetap bersama Tania di masa ketika ia dikucilkan oleh lingkungan sosialnya. Ia tidak ikut arus mayoritas yang mengejek, melainkan menunjukkan empati dan loyalitas.</p>
+            <p>Kesetiaan ini mencerminkan kedewasaan sosial. Zee tidak menilai seseorang berdasarkan kondisi fisik, melainkan berdasarkan relasi dan nilai kemanusiaan.</p>
+            <hr style="border-color: rgba(255,255,255,0.2);">
+            <h5>🧠 2. Reflektif dan Realistis</h5>
+            <p>Zee tidak terpesona oleh perubahan fisik dan keberhasilan Tania. Ia mampu melihat realitas secara objektif.</p>
+            <blockquote>“Tetapi saat sekarang pun keadaan kita menyedihkan…”</blockquote>
+            <p>Pernyataan ini menunjukkan bahwa Zee memiliki kemampuan berpikir kritis dan tidak mudah terbuai oleh pencapaian eksternal. Ia menyadari adanya persoalan mental yang lebih dalam.</p>
+            <hr style="border-color: rgba(255,255,255,0.2);">
+            <h5>🕊️ 3. Religius dan Berprinsip</h5>
+            <p>Ketika azan berkumandang, Zee meminta izin untuk beribadah, meskipun sedang berada dalam pertemuan yang menyenangkan.</p>
+            <p>Hal ini menunjukkan konsistensi nilai dan kedisiplinan spiritual. Ia tidak mengorbankan prinsip demi situasi sosial.</p>
+            <hr style="border-color: rgba(255,255,255,0.2);">
+            <h5>🎭 4. Peka terhadap Ironi Kehidupan</h5>
+            <p>Zee memahami bahwa keberhasilan tidak selalu identik dengan kebahagiaan. Ia menangkap ironi dalam kehidupan mereka yang berakhir di ruang konsultasi psikologi.</p>
+            <p>Kesadaran ini menandakan kematangan berpikir dan kemampuan melihat kehidupan secara lebih luas.</p>
+            <hr style="border-color: rgba(255,255,255,0.2);">
+            <h5>📌 Ringkasan Karakter</h5>
+            <ul>
+              <li>🤝 Empatik dan loyal</li>
+              <li>🧠 Reflektif dan kritis</li>
+              <li>🕊️ Konsisten menjaga nilai spiritual</li>
+              <li>🎭 Mampu membaca kompleksitas hidup</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- PERBANDINGAN -->
     <div class="modal fade" id="compareModal">
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">⚖️ Perbandingan Karakter</h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-            ></button>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
           </div>
-          <div class="modal-body">        <h6><strong>1️⃣ Respons terhadap Luka Sosial</strong></h6>
-        <p>
-          <strong>Tania</strong> merespons perundungan dengan pendekatan reflektif dan analitis.
-          Ia tidak melawan secara agresif, melainkan mengevaluasi dirinya secara sistematis,
-          bahkan menyebut dirinya seperti “peneliti” atas tubuh dan kebiasaannya sendiri.
-        </p>
-        <p>
-          <strong>Zeevara</strong> tidak mengalami luka sosial yang sama,
-          tetapi menunjukkan empati dan kesetiaan.
-          Ia tetap berada di sisi Tania ketika orang lain menjauh.
-        </p>
-
-        <hr>
-
-        <h6><strong>2️⃣ Pola Pikir dan Rasionalitas</strong></h6>
-        <p>
-          Tania menunjukkan pola pikir evaluatif dan berbasis pencapaian.
-          Ia mengalihkan fokus pada prestasi akademik sebagai bentuk rekonstruksi harga diri.
-        </p>
-        <p>
-          Zee memiliki pola pikir reflektif dan kritis.
-          Ia mampu melihat ironi kehidupan dan menyadari bahwa keberhasilan eksternal
-          tidak selalu identik dengan kebahagiaan batin.
-        </p>
-
-        <hr>
-
-        <h6><strong>3️⃣ Transformasi Karakter</strong></h6>
-        <p>
-          Transformasi Tania bersifat progresif dan terlihat jelas.
-          Dari sosok yang dikucilkan, ia berkembang menjadi individu yang percaya diri
-          dan matang secara emosional.
-        </p>
-        <p>
-          Zee tidak mengalami transformasi drastis,
-          tetapi konsisten dalam nilai dan prinsipnya.
-          Perkembangannya lebih bersifat internal dan reflektif.
-        </p>
-
-        <hr>
-
-        <h6><strong>4️⃣ Dimensi Inner Beauty</strong></h6>
-        <p>
-          Inner beauty Tania lahir dari ketahanan menghadapi penderitaan.
-          Ia membangun identitas melalui kerja keras dan kesadaran diri.
-        </p>
-        <p>
-          Inner beauty Zee muncul melalui empati,
-          loyalitas, dan konsistensi spiritual.
-          Ia menjaga nilai meskipun berada dalam situasi sosial yang kompleks.
-        </p>
-
-        <hr>
-
-        <h6><strong>🔎 Kesimpulan Perbandingan</strong></h6>
-        <p>
-          Tania merepresentasikan transformasi melalui luka dan perjuangan.
-          Zee merepresentasikan stabilitas nilai dan kedewasaan reflektif.
-        </p>
-
-        <p>
-          Jika Tania adalah simbol ketahanan dan rekonstruksi diri,
-          maka Zee adalah simbol empati dan konsistensi moral.
-          Keduanya menghadirkan bentuk inner beauty yang berbeda,
-          namun sama-sama relevan sebagai teladan karakter.
-        </p>
-      </div>
+          <div class="modal-body text-start">
+            <h6><strong>1️⃣ Respons terhadap Luka Sosial</strong></h6>
+            <p><strong>Tania</strong> merespons perundungan dengan pendekatan reflektif dan analitis. Ia tidak melawan secara agresif, melainkan mengevaluasi dirinya secara sistematis, bahkan menyebut dirinya seperti “peneliti” atas tubuh dan kebiasaannya sendiri.</p>
+            <p><strong>Zeevara</strong> tidak mengalami luka sosial yang sama, tetapi menunjukkan empati dan kesetiaan. Ia tetap berada di sisi Tania ketika orang lain menjauh.</p>
+            <hr>
+            <h6><strong>2️⃣ Pola Pikir dan Rasionalitas</strong></h6>
+            <p>Tania menunjukkan pola pikir evaluatif dan berbasis pencapaian. Ia mengalihkan fokus pada prestasi akademik sebagai bentuk rekonstruksi harga diri.</p>
+            <p>Zee memiliki pola pikir reflektif dan kritis. Ia mampu melihat ironi kehidupan dan menyadari bahwa keberhasilan eksternal tidak selalu identik dengan kebahagiaan batin.</p>
+            <hr>
+            <h6><strong>3️⃣ Transformasi Karakter</strong></h6>
+            <p>Transformasi Tania bersifat progresif dan terlihat jelas. Dari sosok yang dikucilkan, ia berkembang menjadi individu yang percaya diri dan matang secara emosional.</p>
+            <p>Zee tidak mengalami transformasi drastis, tetapi konsisten dalam nilai dan prinsipnya. Perkembangannya lebih bersifat internal dan reflektif.</p>
+            <hr>
+            <h6><strong>4️⃣ Dimensi Inner Beauty</strong></h6>
+            <p>Inner beauty Tania lahir dari ketahanan menghadapi penderitaan. Ia membangun identitas melalui kerja keras dan kesadaran diri.</p>
+            <p>Inner beauty Zee muncul melalui empati, loyalitas, dan konsistensi spiritual. Ia menjaga nilai meskipun berada dalam situasi sosial yang kompleks.</p>
+            <hr>
+            <h6><strong>🔎 Kesimpulan Perbandingan</strong></h6>
+            <p>Tania merepresentasikan transformasi melalui luka dan perjuangan. Zee merepresentasikan stabilitas nilai dan kedewasaan reflektif.</p>
+            <p>Jika Tania adalah simbol ketahanan dan rekonstruksi diri, maka Zee adalah simbol empati dan konsistensi moral. Keduanya menghadirkan bentuk inner beauty yang berbeda, namun sama-sama relevan sebagai teladan karakter.</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- NILAI MORAL -->
     <div class="modal fade" id="valueModal">
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">📌 Nilai Moral</h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-            ></button>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
           </div>
-          <div class="modal-body"><h6><strong>1️⃣ Ketahanan Menghadapi Perundungan</strong></h6>
-        <p>
-          Tania menunjukkan bahwa tekanan sosial tidak harus dibalas dengan
-          agresi atau penarikan diri total. Ia memilih refleksi dan peningkatan diri.
-          Nilai moral yang muncul adalah <strong>resiliensi</strong> yaitu
-          kemampuan bertahan dan berkembang dalam kondisi tidak ideal.
-        </p>
-
-        <hr>
-
-        <h6><strong>2️⃣ Pentingnya Refleksi dan Evaluasi Diri</strong></h6>
-        <p>
-          Pendekatan Tania yang analitis terhadap dirinya sendiri
-          menegaskan bahwa kesadaran diri adalah fondasi perubahan.
-          Individu yang mampu mengevaluasi dirinya secara rasional
-          memiliki peluang lebih besar untuk bertumbuh.
-        </p>
-
-        <hr>
-
-        <h6><strong>3️⃣ Loyalitas dalam Persahabatan</strong></h6>
-        <p>
-          Sikap Zee yang tetap mendampingi Tania
-          memperlihatkan nilai empati dan kesetiaan.
-          Moral yang dapat diteladani adalah tidak meninggalkan seseorang
-          hanya karena tekanan sosial.
-        </p>
-
-        <hr>
-
-        <h6><strong>4️⃣ Keberhasilan Eksternal Tidak Menjamin Kebahagiaan</strong></h6>
-        <p>
-          Pertemuan mereka di ruang konsultasi psikologi
-          menjadi simbol bahwa pencapaian sosial
-          tidak selalu sejalan dengan stabilitas mental.
-          Moral pentingnya adalah menjaga kesehatan psikologis,
-          bukan hanya citra atau prestasi.
-        </p>
-
-        <hr>
-
-        <h6><strong>5️⃣ Inner Beauty sebagai Hasil Proses</strong></h6>
-        <p>
-          Kisah ini menegaskan bahwa inner beauty
-          bukan sesuatu yang instan atau bawaan lahir.
-          Ia terbentuk melalui luka, refleksi,
-          ketahanan, dan kematangan berpikir.
-        </p>
-
-        <hr>
-
-        <h6><strong>🎯 Kesimpulan Moral</strong></h6>
-        <p>
-          Karya ini mengajarkan bahwa nilai manusia
-          tidak ditentukan oleh kondisi fisik atau penerimaan sosial,
-          melainkan oleh kemampuan mengelola penderitaan,
-          mempertahankan nilai, dan bertumbuh secara sadar.
-        </p>
-
-        <p>
-          Dengan kata lain, keindahan sejati adalah hasil
-          dari integritas, refleksi, dan ketahanan.
-        </p>
-</div>
+          <div class="modal-body text-start">
+            <h6><strong>1️⃣ Ketahanan Menghadapi Perundungan</strong></h6>
+            <p>Tania menunjukkan bahwa tekanan sosial tidak harus dibalas dengan agresi atau penarikan diri total. Ia memilih refleksi dan peningkatan diri. Nilai moral yang muncul adalah <strong>resiliensi</strong> yaitu kemampuan bertahan dan berkembang dalam kondisi tidak ideal.</p>
+            <hr>
+            <h6><strong>2️⃣ Pentingnya Refleksi dan Evaluasi Diri</strong></h6>
+            <p>Pendekatan Tania yang analitis terhadap dirinya sendiri menegaskan bahwa kesadaran diri adalah fondasi perubahan. Individu yang mampu mengevaluasi dirinya secara rasional memiliki peluang lebih besar untuk bertumbuh.</p>
+            <hr>
+            <h6><strong>3️⃣ Loyalitas dalam Persahabatan</strong></h6>
+            <p>Sikap Zee yang tetap mendampingi Tania memperlihatkan nilai empati dan kesetiaan. Moral yang dapat diteladani adalah tidak meninggalkan seseorang hanya karena tekanan sosial.</p>
+            <hr>
+            <h6><strong>4️⃣ Keberhasilan Eksternal Tidak Menjamin Kebahagiaan</strong></h6>
+            <p>Pertemuan mereka di ruang konsultasi psikologi menjadi simbol bahwa pencapaian sosial tidak selalu sejalan dengan stabilitas mental. Moral pentingnya adalah menjaga kesehatan psikologis, bukan hanya citra atau prestasi.</p>
+            <hr>
+            <h6><strong>5️⃣ Inner Beauty sebagai Hasil Proses</strong></h6>
+            <p>Kisah ini menegaskan bahwa inner beauty bukan sesuatu yang instan atau bawaan lahir. Ia terbentuk melalui luka, refleksi, ketahanan, dan kematangan berpikir.</p>
+            <hr>
+            <h6><strong>🎯 Kesimpulan Moral</strong></h6>
+            <p>Karya ini mengajarkan bahwa nilai manusia tidak ditentukan oleh kondisi fisik atau penerimaan sosial, melainkan oleh kemampuan mengelola penderitaan, mempertahankan nilai, dan bertumbuh secara sadar.</p>
+            <p>Dengan kata lain, keindahan sejati adalah hasil dari integritas, refleksi, dan ketahanan.</p>
+          </div>
         </div>
       </div>
     </div>
-    <!-- PROFIL -->
+
     <div class="modal fade" id="profilModal">
-      <div
-        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
-      >
+      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">👤 Tentang Penulis Resensi</h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-            ></button>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
           </div>
-
           <div class="modal-body">
             <div class="row align-items-center">
-              <!-- FOTO -->
               <div class="col-md-4 text-center mb-4 mb-md-0">
-                <img
-                  src="assets/img/profile.jpg"
-                  alt="Foto A. Rachman Fahri"
-                  class="profile-photo"
-                />
+                <img src="assets/img/profile.jpg" alt="Foto A. Rachman Fahri" class="profile-photo"/>
               </div>
-
-              <!-- DESKRIPSI -->
-              <div class="col-md-8">
+              <div class="col-md-8 text-start">
                 <h4 class="fw-bold mb-2">A. Rachman Fahri</h4>
-
-                <p class="mb-2">
-                  <strong>Kelas:</strong> 12.2<br />
-                  <strong>NISN:</strong> 0085194812
-                </p>
-
+                <p class="mb-2"><strong>Kelas:</strong> 12.2<br /><strong>NISN:</strong> 0085194812</p>
                 <hr style="border-color: rgba(255, 255, 255, 0.2)" />
-
-                <p>
-                  Saya memiliki ketertarikan mendalam terhadap dunia literasi,
-                  khususnya karya sastra yang memuat dimensi filosofis,
-                  metafora, serta eksplorasi pemikiran manusia. Membaca bagi
-                  saya bukan sekadar aktivitas, melainkan proses analisis cara
-                  berpikir, membangun struktur logika, dan memahami makna yang
-                  tersembunyi dalam narasi.
-                </p>
-
-                <p>
-                  Dalam mengulas sebuah karya, saya berupaya menyusun argumen
-                  yang rasional, terstruktur, dan terbuka terhadap diskusi
-                  kritis. Resensi bagi saya bukan sekadar ringkasan, tetapi
-                  bentuk latihan intelektual untuk mengasah ketajaman analisis
-                  dan kedewasaan berpikir.
-                </p>
-
-                <p>
-                  Di luar literasi, saya memiliki minat pada bidang teknologi,
-                  pemrograman, dan pengembangan digital. Kombinasi antara
-                  logika, kreativitas, serta struktur berpikir sistematis
-                  menjadi fondasi dalam memahami teks maupun membangun karya
-                  digital seperti proyek ini.
-                </p>
-
-                <p class="fw-semibold mt-3">
-                  Bagi saya, menulis adalah proses berpikir yang disusun secara
-                  sadar, bukan sekadar menyampaikan opini.
-                </p>
+                <p>Saya memiliki ketertarikan mendalam terhadap dunia literasi, khususnya karya sastra yang memuat dimensi filosofis, metafora, serta eksplorasi pemikiran manusia. Membaca bagi saya bukan sekadar aktivitas, melainkan proses analisis cara berpikir, membangun struktur logika, dan memahami makna yang tersembunyi dalam narasi.</p>
+                <p>Dalam mengulas sebuah karya, saya berupaya menyusun argumen yang rasional, terstruktur, dan terbuka terhadap diskusi kritis. Resensi bagi saya bukan sekadar ringkasan, tetapi bentuk latihan intelektual untuk mengasah ketajaman analisis dan kedewasaan berpikir.</p>
+                <p>Di luar literasi, saya memiliki minat pada bidang teknologi, pemrograman, dan pengembangan digital. Kombinasi antara logika, kreativitas, serta struktur berpikir sistematis menjadi fondasi dalam memahami teks maupun membangun karya digital seperti proyek ini.</p>
+                <p class="fw-semibold mt-3">Bagi saya, menulis adalah proses berpikir yang disusun secara sadar, bukan sekadar menyampaikan opini.</p>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SINOPSIS -->
-    <div class="modal fade" id="sinopsisModal">
-      <div
-        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">🌿 Sinopsis</h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-            ></button>
-          </div>
-          <div class="modal-body">Isi sinopsis di sini...</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- KELEBIHAN -->
-    <div class="modal fade" id="kelebihanModal">
-      <div
-        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">⭐ Kelebihan</h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-            ></button>
-          </div>
-          <div class="modal-body">Isi kelebihan di sini...</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- KEKURANGAN -->
-    <div class="modal fade" id="kekuranganModal">
-      <div
-        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">⚖️ Kekurangan</h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-            ></button>
-          </div>
-          <div class="modal-body">Isi kekurangan di sini...</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TANIA -->
-    <div class="modal fade" id="taniaModal">
-      <div
-        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">🌿 Karakter Tania</h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-            ></button>
-          </div>
-          <div class="modal-body">Isi karakter Tania di sini...</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ZEE -->
-    <div class="modal fade" id="zeeModal">
-      <div
-        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">🌊 Karakter Zeevara</h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-            ></button>
-          </div>
-          <div class="modal-body">Isi karakter Zee di sini...</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PERBANDINGAN -->
-    <div class="modal fade" id="compareModal">
-      <div
-        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">⚖️ Perbandingan</h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-            ></button>
-          </div>
-          <div class="modal-body">Isi perbandingan di sini...</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- NILAI MORAL -->
-    <div class="modal fade" id="valueModal">
-      <div
-        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">📌 Nilai Moral</h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-            ></button>
-          </div>
-          <div class="modal-body">Isi nilai moral di sini...</div>
         </div>
       </div>
     </div>
